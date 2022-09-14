@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/mystyle.css">
+    <title>User registeration system</title>
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <h1>My awesome user registeration system!</h1>
 
         <nav>
-            <a href="index.html"></a>
-            <a href="register.html"></a>
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
         </nav>
     </header>
     <main>
         <h2>Register a new user</h2>
-        <div class="form-container">        
+
+        <div class="flex-btn">
+            <button class="btn" id="btnShowForm">👀</button> 
+        </div>
+        
+        
+    <div class="form-container"> 
+            <div class="flex-btn">
+                <button id="btnCloseForm">❌</button>
+            </div>       
        
             <div class="input-container">
                 <label>Email</label>
@@ -39,7 +49,7 @@
                 <label>Age</label>
                 <input type="number" id="userAge">
             </div>
-            <div>
+            <div class="input-container">
                 <label>Gender</label>
                 <input type="text" id="userGender">
             </div>
@@ -55,8 +65,8 @@
                 <label>Color</label>
                 <input type="color" id="userColor">
             </div>
-            <div>
-                <label>Payment Method</label>
+            <div class="input-container">
+                <label>Payment Method:</label>
                 <select id="userPayment">
                     <option value="" disabled selected>--Select an Option--</option>
                     <option value="card">Credit Card</option>
@@ -65,7 +75,7 @@
                 </select>
             </div>
 
-        <button onclick="register();">Register</button>
+        <button class="btn" id="btnSave">Register</button>
     </div>
 
     </main>
@@ -73,7 +83,9 @@
 
     </footer>
    
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>    
     <script src="scripts/register.js"></script>
+    <script src="scripts/storeManager.js"></script>
 </body>
+   
 </html>
