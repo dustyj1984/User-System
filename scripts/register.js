@@ -17,7 +17,7 @@ function User(email,password,firstname,lastname,age,gender,address,phone,color,p
         let valid = true;
         if(user.email == ""|| user.password == "" || user.firstname ==""){
             valid = false;
-            alert("Please enter an email");
+            alert("Please enter missing information");
             }
             return valid;
             
