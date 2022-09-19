@@ -1,9 +1,8 @@
 //object contructor
-function User(email,password,firstname,lastname,age,gender,address,phone,color,payment){
+function User(email,password,name,age,gender,address,phone,color,payment){
     this.email = email;
     this.password = password;
-    this.firstname = firstname;
-    this.lastname = lastname;
+    this.name = name;
     this.age = age;
     this.gender = gender;
     this.address = address;
@@ -15,21 +14,61 @@ function User(email,password,firstname,lastname,age,gender,address,phone,color,p
     
     function isValid(user){
         let valid = true;
-        if(user.email == ""|| user.password == "" || user.firstname ==""){
+        $("input").removeClass("input-error");
+        if(user.email == ""){
             valid = false;
-            alert("Please enter missing information");
-            }
-            return valid;
+            $("#userEmail").addClass("input-error");
             
-    
+            console.log("Please enter missing information");
+            }
+
+            if(user.name==""){
+                valid = false;
+                $("#userName").addClass("input-error");
+                console.log("Please enter missing information");
+            }
+
+            if(user.phone ==""){
+                valid = false;
+                $("#userPhone").addClass("input-error");
+                console.log("Please enter missing information");
+            
+            }
+
+            if(user.password.length == 0){
+                valid = false;
+                $("#userPassword").addClass("input-error");
+            }
+
+            return valid;
     }
-    
+    function validatePass(){
+        
+        let inputPass= $("#userPassword");
+        let password= inputPass.val();
+        if(password.length<6){
+            inputPass.css("background-color","pink");
+            
+            displayError("the password is to short");
+    }else{
+       
+         inputPass.css("background-color","green");
+            console.log("Password has the correct extension");
+            hideError();
+     }
+}
+    function displayError(msg){
+
+        $("#alert-error").removeClass("hide").text(msg);   
+    }
+    function hideError(){
+        $("#alert-error").addClass("hide");
+    }
     function register(){
         //getting the value for the input
         let txtEmail = $("#userEmail").val();
         let txtPassword = $("#userPassword").val();
-        let txtFirstName = $("#userFirstName").val();
-        let txtLastName = $("#userLastName").val();
+        let txtName = $("#userName").val();
         let txtAge = $("#userAge").val();
         let txtGender = $("#userGender").val();
         let txtAddress = $("#userAddress").val();
@@ -41,20 +80,24 @@ function User(email,password,firstname,lastname,age,gender,address,phone,color,p
     
  
         //create the user obj
-       let aUser = new User(txtEmail, txtPassword, txtFirstName, txtLastName, txtAge, txtGender, txtAddress, txtPhone, selColor, selPayment);
+       let aUser = new User(txtEmail, txtPassword, txtName, txtAge, txtGender, txtAddress, txtPhone, selColor, selPayment);
     
        
     
         //display the object in the console
         if(isValid(aUser)){
-        saveUser(aUser);
-       
-    
-        //clear the input
-        $("input").val("");
+            hideError();
+            saveUser(aUser);
+            
+            //clear the input
+         $("input").val("");
+         
+        }else{
+            displayError("Please complete all the fields");
+        
         }
-    
     }
+
     
     function init(){
         //hook event
@@ -70,7 +113,7 @@ function User(email,password,firstname,lastname,age,gender,address,phone,color,p
                 $(".form-container").slideUp(1000);
         });
     
-    
+        $("#userPassword").keyup(validatePass);
     
     }
     

@@ -8,16 +8,30 @@
     <title>User registeration system</title>
 </head>
 <body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="users.html">User List</a>
+    </nav>
     <header class="site-header">
         <h1>My awesome user registeration system!</h1>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="register.html">Register</a>
-        </nav>
+       
     </header>
     <main>
-        <h2>Welcome to the homte page</h2>
+        <h2>Log into the system</h2>
+        <div class="form-container">
+            <p id="alert-error" class="hide">Invalid Credentials</p>        
+            
+            <div class="input-container">
+                <input type="text" id="userName" placeholder="Enter your Email">
+            </div>
+            <div class="input-container">
+                <input type="password" id="userPass" placeholder="Enter your Password">
+            </div>
+            
+            <button class="btn" id="loginBtn">Login</button>
+        </div>
 
 
     </main>
@@ -26,8 +40,9 @@
     </footer>
    
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>    
-    <script src="scripts/register.js"></script>
     <script src="scripts/storeManager.js"></script>
+    <script src="scripts/login.js"></script>
+  
 </body>
    
 </html>

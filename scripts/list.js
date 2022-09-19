@@ -8,8 +8,7 @@ function displayUsers(usersArray){
     row=`
 
     <tr>
-        <td>${user.firstname}</td>
-        <td>${user.lastname}</td>
+        <td>${user.name}</td>
         <td>${user.email}</td>
         <td>${user.age}</td>
         <td>${user.gender}</td>

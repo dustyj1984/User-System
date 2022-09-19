@@ -5,35 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/mystyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>User registeration system</title>
 </head>
 <body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="users.html">User List</a>
+    </nav>
     <header class="site-header">
         <h1>User List</h1>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="register.html">Register</a>
-        </nav>
+    
     </header>
     <main>
-        <h2>Users in the system</h2>
-        <table>
+        <h2 class="list-title">Users in the system</h2>
+        <table class="table">
             <thead>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Name</th>
                     <th>Email</th>
-                    <th>Password</th>
                     <th>Age</th>
                     <th>Gender</th>
                     <th>Address</th>
-                    <th>Phone</th>
-    
+                    <th>Phone</th>    
                     <th>Payment</th>
-                    
-
-
+                    <th>Color</th>            
                 </tr>
             </thead>
             <tbody id="usersTable">
